@@ -1,0 +1,1 @@
+Ceci est un texte de test pour vérifier si l'analyse de sentiment fonctionne correctement. C'est un texte positif avec des mots comme bon, excellent, super et génial.

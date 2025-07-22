@@ -1,0 +1,19 @@
+# Configuration pour afficher les fichiers Markdown
+<Files *.md>
+    AddType text/html .md
+    AddHandler markdown-handler .md
+    Action markdown-handler /Dossier_Projet_Simplon/speech_analyser/md_viewer.php
+</Files>
+
+# Redirection de la page d'accueil vers home.html
+DirectoryIndex home.html index.php
+
+# Protection contre l'accès aux fichiers Python
+<Files *.py>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Autoriser la création du dossier temp
+# Note: Les directives pour le dossier temp doivent être configurées dans le fichier httpd.conf d'Apache
+# ou dans un fichier de configuration virtuel host, pas dans .htaccess
