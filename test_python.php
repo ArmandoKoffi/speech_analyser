@@ -1,7 +1,6 @@
 <?php
-// Afficher les erreurs PHP pour le débogage
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Inclure la configuration globale
+require_once 'config.php';
 
 echo "<html>\n<head>\n<title>Test de l'installation Python</title>\n<meta charset='UTF-8'>\n<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n<link rel='stylesheet' href='css/style.css'>\n<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>\n<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>\n<style>\n.test-container { max-width: 900px; margin: 0 auto; padding: 2rem; }\n.test-section { background-color: var(--card-bg); margin-bottom: 20px; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); }\npre { background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; }\n.success { color: green; font-weight: bold; }\n.error { color: red; font-weight: bold; }\n.back-link { display: inline-flex; align-items: center; margin-bottom: 1.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500; transition: var(--transition); }\n.back-link:hover { color: var(--secondary-color); }\n.back-link i { margin-right: 0.5rem; }\n</style>\n</head>\n<body>\n<div class='container'>\n<header>\n<div class='logo-container'>\n<div class='logo'>\n<i class='fas fa-brain'></i>\n</div>\n<h1>Analyseur de Discours</h1>\n</div>\n<p class='tagline'>Diagnostic Python</p>\n</header>\n<main>\n<a href='home.html' class='back-link'>\n<i class='fas fa-arrow-left'></i> Retour à l'accueil\n</a>\n<div class='test-container'>\n";
 

@@ -1,8 +1,6 @@
 <?php
-// Définir l'encodage UTF-8
-header('Content-Type: text/html; charset=utf-8');
-mb_internal_encoding('UTF-8');
-mb_http_output('UTF-8');
+// Inclure la configuration globale
+require_once 'config.php';
 
 // Initialiser les variables
 $result = [];
@@ -21,18 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Veuillez entrer un texte à analyser.";
     } else {
         // Sauvegarder le texte dans un fichier temporaire
-        $tempFile = "temp/input_" . time() . ".txt";
-        
-        // Créer le répertoire temp s'il n'existe pas
-        if (!is_dir("temp")) {
-            mkdir("temp", 0755, true);
-        }
+        $tempFile = TEMP_DIR . "/input_" . time() . ".txt";
         
         // Écrire le texte dans le fichier avec encodage UTF-8 explicite
         file_put_contents($tempFile, $text, LOCK_EX);
         
         // Essayer différentes commandes Python
-        $pythonCommands = ["python", "python3", "py"];
+        $pythonCommands = PYTHON_COMMANDS;
         $output = null;
         $command = "";
         $commandSuccess = false;
@@ -99,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Résultats d'Analyse | Analyseur de Discours</title>
+    <title>Résultats d'Analyse | <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -111,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="logo">
                     <i class="fas fa-brain"></i>
                 </div>
-                <h1>Analyseur de Discours</h1>
+                <h1><?php echo APP_NAME; ?></h1>
             </div>
             <p class="tagline">Résultats de votre analyse</p>
         </header>
@@ -215,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </main>
 
         <footer>
-            <p>&copy; <?php echo date('Y'); ?> Analyseur de Discours | Projet Simplon</p>
+            <p>&copy; <?php echo APP_YEAR; ?> <?php echo APP_NAME; ?> | Projet Simplon</p>
         </footer>
     </div>
 

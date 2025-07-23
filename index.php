@@ -1,9 +1,13 @@
+<?php
+// Inclure la configuration globale
+require_once 'config.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyseur de Discours</title>
+    <title><?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,13 +19,11 @@
                 <div class="logo">
                     <i class="fas fa-brain"></i>
                 </div>
-                <h1>Analyseur de Discours</h1>
+                <h1><?php echo APP_NAME; ?></h1>
             </div>
             <p class="tagline">Découvrez les insights cachés dans vos textes</p>
             <div style="text-align: center; margin-top: 1rem;">
-                <a href="home.html" style="display: inline-flex; align-items: center; color: var(--primary-color); text-decoration: none; font-weight: 500; transition: var(--transition);">
-                    <i class="fas fa-home" style="margin-right: 0.5rem;"></i> Retour à l'accueil
-                </a>
+                <?php echo renderBackToHomeButton('back-link'); ?>
             </div>
         </header>
 
@@ -81,7 +83,7 @@
         </main>
 
         <footer>
-            <p>&copy; <?php echo date('Y'); ?> Analyseur de Discours | Projet Simplon</p>
+            <p>&copy; <?php echo APP_YEAR; ?> <?php echo APP_NAME; ?> | Projet Simplon</p>
         </footer>
     </div>
 

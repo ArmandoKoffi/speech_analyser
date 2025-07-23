@@ -6,6 +6,9 @@
  * avec une mise en forme HTML basique.
  */
 
+// Inclure la configuration globale
+require_once 'config.php';
+
 // Récupérer le chemin du fichier Markdown demandé
 $requested_file = $_SERVER['PATH_TRANSLATED'];
 
@@ -14,7 +17,7 @@ if (!file_exists($requested_file)) {
     header("HTTP/1.0 404 Not Found");
     echo "<h1>Erreur 404: Fichier non trouvé</h1>";
     echo "<p>Le fichier demandé n'existe pas.</p>";
-    echo "<p><a href='/Dossier_Projet_Simplon/speech_analyser/home.html'>Retour à l'accueil</a></p>";
+    echo "<p>" . renderBackToHomeButton() . "</p>";
     exit;
 }
 
@@ -187,9 +190,7 @@ $title = isset($matches[1]) ? $matches[1] : 'Document Markdown';
         </header>
 
         <main>
-            <a href="home.html" class="back-link">
-                <i class="fas fa-arrow-left"></i> Retour à l'accueil
-            </a>
+            <?php echo renderBackToHomeButton('back-link'); ?>
             
             <div class="markdown-container">
                 <?php echo $html_content; ?>
@@ -197,7 +198,7 @@ $title = isset($matches[1]) ? $matches[1] : 'Document Markdown';
         </main>
 
         <footer>
-            <p>&copy; <?php echo date('Y'); ?> Analyseur de Discours | Projet Simplon</p>
+            <p>&copy; <?php echo APP_YEAR; ?> <?php echo APP_NAME; ?> | Projet Simplon</p>
         </footer>
     </div>
 </body>
