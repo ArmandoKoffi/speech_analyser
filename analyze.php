@@ -121,7 +121,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card result-card">
                     <div class="card-header">
                         <h2><i class="fas fa-chart-bar"></i> Résultats de l'analyse</h2>
-                        <a href="index.php" class="btn-back"><i class="fas fa-arrow-left"></i> Retour</a>
+                        <div class="navigation-buttons">
+                            <a href="index.php" class="btn-back"><i class="fas fa-arrow-left"></i> Retour</a>
+                            <a href="home.html" class="btn-home"><i class="fas fa-home"></i> Accueil</a>
+                        </div>
                     </div>
                     
                     <?php if (!empty($error)): ?>

@@ -3,13 +3,13 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-echo "<html>\n<head>\n<title>Test de l'installation Python</title>\n<style>\nbody { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }\nh1 { color: #333; }\npre { background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; }\n.success { color: green; font-weight: bold; }\n.error { color: red; font-weight: bold; }\n.section { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }\n</style>\n</head>\n<body>\n";
+echo "<html>\n<head>\n<title>Test de l'installation Python</title>\n<meta charset='UTF-8'>\n<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n<link rel='stylesheet' href='css/style.css'>\n<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>\n<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap' rel='stylesheet'>\n<style>\n.test-container { max-width: 900px; margin: 0 auto; padding: 2rem; }\n.test-section { background-color: var(--card-bg); margin-bottom: 20px; padding: 15px; border-radius: var(--border-radius); box-shadow: var(--box-shadow); }\npre { background-color: #f5f5f5; padding: 10px; border-radius: 5px; overflow-x: auto; }\n.success { color: green; font-weight: bold; }\n.error { color: red; font-weight: bold; }\n.back-link { display: inline-flex; align-items: center; margin-bottom: 1.5rem; color: var(--primary-color); text-decoration: none; font-weight: 500; transition: var(--transition); }\n.back-link:hover { color: var(--secondary-color); }\n.back-link i { margin-right: 0.5rem; }\n</style>\n</head>\n<body>\n<div class='container'>\n<header>\n<div class='logo-container'>\n<div class='logo'>\n<i class='fas fa-brain'></i>\n</div>\n<h1>Analyseur de Discours</h1>\n</div>\n<p class='tagline'>Diagnostic Python</p>\n</header>\n<main>\n<a href='home.html' class='back-link'>\n<i class='fas fa-arrow-left'></i> Retour à l'accueil\n</a>\n<div class='test-container'>\n";
 
 echo "<h1>Test de l'installation Python pour l'Analyseur de Discours</h1>";
 
 // Fonction pour exécuter une commande et afficher le résultat
 function runCommand($title, $command) {
-    echo "<div class='section'>";
+    echo "<div class='test-section'>";
     echo "<h2>$title</h2>";
     echo "<p>Commande exécutée : <code>$command</code></p>";
     echo "<pre>";
@@ -43,7 +43,7 @@ foreach ($pythonCommands as $cmd) {
 
 // Tester l'exécution du script d'analyse
 if ($pythonFound) {
-    echo "<div class='section'>";
+    echo "<div class='test-section'>";
     echo "<h2>Test du script d'analyse</h2>";
     
     // Créer un fichier de test temporaire
@@ -84,7 +84,7 @@ if ($pythonFound) {
 }
 
 // Informations sur le système
-echo "<div class='section'>";
+echo "<div class='test-section'>";
 echo "<h2>Informations sur le système</h2>";
 
 echo "<h3>Version de PHP</h3>";
@@ -99,7 +99,7 @@ echo "<pre>" . htmlspecialchars(getcwd()) . "</pre>";
 echo "</div>";
 
 // Conseils de dépannage
-echo "<div class='section'>";
+echo "<div class='test-section'>";
 echo "<h2>Conseils de dépannage</h2>";
 echo "<ol>";
 echo "<li>Si aucune commande Python ne fonctionne, installez Python depuis <a href='https://www.python.org/downloads/' target='_blank'>le site officiel</a> et assurez-vous de cocher l'option 'Add Python to PATH' pendant l'installation.</li>";
@@ -109,7 +109,12 @@ echo "<li>Vérifiez que le script <code>analyze_text.py</code> est présent dans
 echo "</ol>";
 echo "</div>";
 
-echo "<p><a href='home.html'>Retour à l'accueil</a></p>";
-
+echo "</div>";
+echo "</div>";
+echo "</main>";
+echo "<footer>";
+echo "<p>&copy; " . date('Y') . " Analyseur de Discours | Projet Simplon</p>";
+echo "</footer>";
+echo "</div>";
 echo "</body>\n</html>";
 ?>

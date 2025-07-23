@@ -18,6 +18,11 @@
                 <h1>Analyseur de Discours</h1>
             </div>
             <p class="tagline">Découvrez les insights cachés dans vos textes</p>
+            <div style="text-align: center; margin-top: 1rem;">
+                <a href="home.html" style="display: inline-flex; align-items: center; color: var(--primary-color); text-decoration: none; font-weight: 500; transition: var(--transition);">
+                    <i class="fas fa-home" style="margin-right: 0.5rem;"></i> Retour à l'accueil
+                </a>
+            </div>
         </header>
 
         <main>
